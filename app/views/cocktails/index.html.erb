@@ -1,17 +1,17 @@
-<div class="container" <%= img_tag ('https://media.giphy.com/media/3osxY5iekJYTaYXo52/giphy.gif') %>>
+<div class="container" >
   <h1 class="text-underline">Cocktails</h1>
   <div class="row">
 
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: ,
-                  url('https://media.giphy.com/media/3osxY5iekJYTaYXo52/giphy.gif');">
+      <div class="card" style="">
         <div class="card-description">
-          <h2> <%= cocktail.name  %> </h2>
-        </div>
-        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+          <h2> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link"%>
+              <%= link_to "Add new cocktail", cocktails_path %></h2>
+          </div>
+         </div>
+       <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 
