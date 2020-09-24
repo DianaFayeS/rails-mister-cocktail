@@ -1,7 +1,8 @@
-<div class="container padded">
-	<h1 class="text-underline">
-		<%= @cocktail.name %>
-	</h1>
+<h2><%= @cocktail.name %></h2>
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+<% end %> 
 
-
-</div>
+<%= link_to "Add dose",  new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Back to Cocktails", cocktails_path %>
+<%= link_to "Delete dose", cocktail_dose_path(@cocktail) %>
